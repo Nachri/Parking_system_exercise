@@ -1,5 +1,7 @@
 package pl.connectis.egzamin.parking;
 
+import static pl.connectis.egzamin.parking.SpotStatus.*;
+
 public class Spot {
 
     private static int count;
@@ -9,7 +11,7 @@ public class Spot {
     private int spotNo;
 
     public Spot(){
-        occupiedStatus = SpotStatus.FREE;
+        occupiedStatus = FREE;
         spotNo = ++count;
     }
 

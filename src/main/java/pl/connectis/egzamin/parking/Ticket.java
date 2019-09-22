@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import static pl.connectis.egzamin.parking.SpotStatus.*;
 import static pl.connectis.egzamin.parking.Tariffs.*;
 
 public class Ticket {
@@ -74,7 +75,7 @@ public class Ticket {
         }
 
         this.tariff = this.tariffType.getTariff() * stayTime;
-        this.spot.setOccupiedStatus(SpotStatus.FREE);
+        this.spot.setOccupiedStatus(FREE);
     }
 
     public void endTicket(String end){
@@ -93,7 +94,7 @@ public class Ticket {
         }
 
         this.tariff = this.tariffType.getTariff() * stayTime;
-        this.spot.setOccupiedStatus(SpotStatus.FREE);
+        this.spot.setOccupiedStatus(FREE);
     }
 
     @Override
