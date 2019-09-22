@@ -1,5 +1,4 @@
 package pl.connectis.egzamin.parking;
-import java.util.List;
 
 import static pl.connectis.egzamin.parking.SpotStatus.*;
 

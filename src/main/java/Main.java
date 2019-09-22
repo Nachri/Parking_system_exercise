@@ -1,5 +1,3 @@
-package pl.connectis.egzamin;
-
 import pl.connectis.egzamin.parking.Parking;
 import pl.connectis.egzamin.parking.Spot;
 import pl.connectis.egzamin.parking.Ticket;

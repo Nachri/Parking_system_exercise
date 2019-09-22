@@ -68,7 +68,7 @@ public class Parking {
         if (this.freeSpots() == 0) {
             System.out.println("Brak wolnych miejsc.");
         } else {
-            Ticket newTicket = new Ticket();
+            Ticket newTicket = Ticket.getInstance();
             Spot spot = this.nextFreeSpot();
             newTicket.setSpot(spot);
             Ticket.getTickets().add(newTicket);
