@@ -1,5 +1,3 @@
-package pl.connectis.egzamin;
-
 import pl.connectis.egzamin.parking.Parking;
 import pl.connectis.egzamin.parking.Spot;
 import pl.connectis.egzamin.parking.Ticket;
@@ -12,7 +10,7 @@ public class Main {
 
     public static void main(String[] args){
 
-        Parking parking = new Parking("Parking 01", "Al.Jerozolimskie 123, 05-123, Warszawa");
+        Parking parking = new Parking("pl.connectis.egzamin.Parking 01", "Al.Jerozolimskie 123, 05-123, Warszawa");
         parking.setMaxSpots(5);
 
         Spot[] spots = new Spot[5];

@@ -4,8 +4,6 @@ import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
-import static pl.connectis.egzamin.parking.SpotStatus.*;
-
 public class Parking {
 
 
@@ -45,7 +43,7 @@ public class Parking {
     public int takenSpots() {
         int i = 0;
         for (Spot spot : this.spots) {
-            if (spot.isOccupied() == OCCUPIED) i++;
+            if (spot.isOccupied() == SpotStatus.OCCUPIED) i++;
         }
         return i;
     }
@@ -58,7 +56,7 @@ public class Parking {
 
     private Spot nextFreeSpot() {
         for (Spot spot : spots) {
-            if (spot.isOccupied() == FREE) return spot;
+            if (spot.isOccupied() == SpotStatus.FREE) return spot;
         }
         return null;
     }
@@ -68,11 +66,11 @@ public class Parking {
         if (this.freeSpots() == 0) {
             System.out.println("Brak wolnych miejsc.");
         } else {
-            Ticket newTicket = new Ticket();
+            Ticket newTicket = Ticket.getInstance();
             Spot spot = this.nextFreeSpot();
             newTicket.setSpot(spot);
             Ticket.getTickets().add(newTicket);
-            spot.setOccupiedStatus(OCCUPIED);
+            spot.setOccupiedStatus(SpotStatus.OCCUPIED);
             System.out.println("Bilet nr: " + newTicket.getTicketID() + " miejsce: " + newTicket.getSpot().getSpotNo()
                     + " data: "
                     + newTicket.getStart().toLocalDate()

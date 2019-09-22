@@ -5,7 +5,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
-import static pl.connectis.egzamin.parking.SpotStatus.FREE;
+
 import static pl.connectis.egzamin.parking.Tariffs.*;
 
 public class Ticket {
@@ -21,7 +21,7 @@ public class Ticket {
     private Tariffs tariffType;
     private long tariff;
 
-    public Ticket() {
+    private Ticket() {
         this.ticketID = ++count;
         this.start = LocalDateTime.now();
     }
@@ -54,6 +54,10 @@ public class Ticket {
         return ticketID;
     }
 
+    public static Ticket getInstance(){
+        return new Ticket();
+    }
+
     public void endTicket() {
         this.end = LocalDateTime.now();
         long stayTime = this.start.until(this.end, ChronoUnit.HOURS);
@@ -70,7 +74,7 @@ public class Ticket {
         }
 
         this.tariff = this.tariffType.getTariff() * stayTime;
-        this.spot.setOccupiedStatus(FREE);
+        this.spot.setOccupiedStatus(SpotStatus.FREE);
     }
 
     public void endTicket(String end){
@@ -89,7 +93,7 @@ public class Ticket {
         }
 
         this.tariff = this.tariffType.getTariff() * stayTime;
-        this.spot.setOccupiedStatus(FREE);
+        this.spot.setOccupiedStatus(SpotStatus.FREE);
     }
 
     @Override

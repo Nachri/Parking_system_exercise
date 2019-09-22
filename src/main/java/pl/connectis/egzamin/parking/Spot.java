@@ -1,7 +1,4 @@
 package pl.connectis.egzamin.parking;
-import java.util.List;
-
-import static pl.connectis.egzamin.parking.SpotStatus.*;
 
 public class Spot {
 
@@ -12,7 +9,7 @@ public class Spot {
     private int spotNo;
 
     public Spot(){
-        occupiedStatus = FREE;
+        occupiedStatus = SpotStatus.FREE;
         spotNo = ++count;
     }
 
